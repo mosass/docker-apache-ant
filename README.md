@@ -1,2 +1,1 @@
-# docker-apache-ant
-Docker image for Apache Ant
+# Tools as Docker images
