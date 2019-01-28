@@ -20,6 +20,3 @@ RUN mkdir /app
 
 # Set Workdir
 WORKDIR /app
-
-# Set Default Behavior
-ENTRYPOINT ["grails"]
