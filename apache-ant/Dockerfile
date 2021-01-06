@@ -1,13 +1,7 @@
-FROM ticketfly/java:6
+FROM alpine
 
-WORKDIR /project
+WORKDIR /work
 
-ENV ANT_VERSION 1.9.13
-ENV ANT_HOME /opt/apache-ant-${ANT_VERSION}
+RUN apk update && apk add openjdk8 && apk add apache-ant
 
-RUN cd /tmp && \
-    wget http://archive.apache.org/dist/ant/binaries/apache-ant-${ANT_VERSION}-bin.tar.gz && \
-    tar zxf /tmp/apache-ant-${ANT_VERSION}-bin.tar.gz -C /opt/ && \
-    rm -f /tmp/*.gz
-
-ENV PATH ${PATH}:${ANT_HOME}/bin
+ENTRYPOINT [ "ant" ]
